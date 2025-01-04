@@ -25,5 +25,5 @@ python manage.py createsuperuser
 python manage.py runserver
 
 # open your crome/browser and goto 
-localhost:8000/admin to see the admin section 
+localhost:8000/admin to see the admin section <br>
 localhost:8000/api to see the detail in json format
