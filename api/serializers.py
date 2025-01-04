@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Tag,Warehouse,CustomUser,WarehouseImage,Bill,Review,TopWarehouse,BillImage,AddWarehouse
+from .models import Tag,Warehouse,CustomUser,WarehouseImage,ProductList,Review,TopWarehouse,BillImage,AddWarehouse
 class CustomUserSerializer(serializers.ModelSerializer):
    user_fav_warehouses = serializers.PrimaryKeyRelatedField(many = True,read_only = True)
    class Meta:
@@ -57,7 +57,7 @@ class CreateReviewSerializer(serializers.ModelSerializer):
 
 class BillSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Bill
+        model = ProductList
         fields = ['id','name','price','category']
 
     

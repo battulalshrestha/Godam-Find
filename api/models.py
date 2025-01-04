@@ -48,7 +48,7 @@ from django.db import models
 from api.models import Warehouse
 from api.models import WarehouseImage
 
-class Bill(models.Model):
+class ProductList(models.Model):
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10,decimal_places=2)
     category =models.CharField(max_length=70,choices= [
@@ -63,7 +63,7 @@ class Bill(models.Model):
     def __str__(self):
         return f"{self.name} - ${self.price}"
     def get_category_display(self):
-        return dict(Bill._meta.get_field('category').choices)[self.category]
+        return dict(ProductList._meta.get_field('category').choices)[self.category]
     
 class Review(models.Model):
     user = models.ForeignKey(CustomUser,related_name='reviews',on_delete=models.CASCADE)
